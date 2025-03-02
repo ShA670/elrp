@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>تسجيل الحساب / تسجيل الدخول</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #1c1c1c;
+            color: white;
+            margin: 0;
+            padding: 0;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .form-container {
+            background-color: #333;
+            padding: 20px;
+            border-radius: 10px;
+            width: 300px;
+        }
+
+        input {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            border: none;
+            border-radius: 5px;
+            background-color: #555;
+            color: white;
+        }
+
+        button {
+            padding: 10px 20px;
+            background-color: #888;
+            border: none;
+            border-radius: 5px;
+            color: white;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #444;
+        }
+
+        .switch-btn {
+            margin-top: 10px;
+            color: #ccc;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+
+<!-- Container for Forms -->
+<div class="form-container" id="form-container">
+    <h2 id="form-title">تسجيل حساب</h2>
+
+    <!-- Registration Form -->
+    <form id="signup-form">
+        <input type="text" id="signup-email" placeholder="البريد الإلكتروني" required>
+        <input type="text" id="signup-discord-id" placeholder="معرف Discord" required>
+        <input type="password" id="signup-password" placeholder="كلمة المرور" required>
+        <button type="submit">إنشاء الحساب</button>
+    </form>
+
+    <!-- Login Form -->
+    <form id="login-form" style="display: none;">
+        <input type="text" id="login-discord-id" placeholder="معرف Discord" required>
+        <input type="password" id="login-password" placeholder="كلمة المرور" required>
+        <button type="submit">تسجيل الدخول</button>
+    </form>
+
+    <!-- Switch Between Forms -->
+    <p class="switch-btn" id="switch-to-login">هل لديك حساب؟ تسجيل الدخول</p>
+    <p class="switch-btn" id="switch-to-signup" style="display: none;">ليس لديك حساب؟ إنشاء حساب</p>
+</div>
+
+<script>
+    // تسجيل الحساب
+    document.getElementById('signup-form').addEventListener('submit', function(event) {
+        event.preventDefault();
+
+        const email = document.getElementById('signup-email').value;
+        const discordId = document.getElementById('signup-discord-id').value;
+        const password = document.getElementById('signup-password').value;
+
+        // التحقق من المدخلات
+        if (!email || !discordId || !password) {
+            alert("يرجى تعبئة جميع الحقول!");
+            return;
+        }
+
+        // تخزين البيانات في localStorage
+        localStorage.setItem('discord-id', discordId);
+        localStorage.setItem('password', password);
+
+        alert('تم إنشاء الحساب بنجاح!');
+        window.location.href = 'index.html'; // الانتقال إلى الصفحة الرئيسية أو صفحة أخرى
+    });
+
+    // تسجيل الدخول
+    document.getElementById('login-form').addEventListener('submit', function(event) {
+        event.preventDefault();
+
+        const discordId = document.getElementById('login-discord-id').value;
+        const password = document.getElementById('login-password').value;
+
+        const storedDiscordId = localStorage.getItem('discord-id');
+        const storedPassword = localStorage.getItem('password');
+
+        // التحقق من وجود البيانات في localStorage ومقارنتها مع المدخلات
+        if (discordId === storedDiscordId && password === storedPassword) {
+            alert('تم تسجيل الدخول بنجاح!');
+            window.location.href = 'index.html'; // العودة للصفحة الرئيسية
+        } else {
+            alert('معرف Discord أو كلمة المرور غير صحيحة!');
+        }
+    });
+
+    // التبديل بين التسجيل وتسجيل الدخول
+    document.getElementById('switch-to-login').addEventListener('click', function() {
+        document.getElementById('form-title').textContent = "تسجيل الدخول";
+        document.getElementById('signup-form').style.display = 'none';
+        document.getElementById('login-form').style.display = 'block';
+        document.getElementById('switch-to-login').style.display = 'none';
+        document.getElementById('switch-to-signup').style.display = 'block';
+    });
+
+    document.getElementById('switch-to-signup').addEventListener('click', function() {
+        document.getElementById('form-title').textContent = "تسجيل حساب";
+        document.getElementById('signup-form').style.display = 'block';
+        document.getElementById('login-form').style.display = 'none';
+        document.getElementById('switch-to-login').style.display = 'block';
+        document.getElementById('switch-to-signup').style.display = 'none';
+    });
+</script>
+
+</body>
+</html>

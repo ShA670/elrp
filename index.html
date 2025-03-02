@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>الصفحة الرئيسية</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-image: url('https://cdn.discordapp.com/attachments/1344941753077334058/1345720389795582013/FIGHTERS_3.png?ex=67c59347&is=67c441c7&hm=892400f5d1da4f332f344375086537a0dff6d8875db9e665e1348721d828689a&');
+            background-size: cover;
+            background-position: center;
+            color: white;
+            margin: 0;
+            padding: 0;
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .header {
+            background-color: rgba(34, 34, 34, 0); /* إضافة الشفافية للخلفية */
+            padding: 10px 0;
+            text-align: center;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            left: 0;
+            z-index: 1000;
+        }
+
+        .header a {
+            color: #1edce8;
+            font-size: 18px;
+            text-decoration: none;
+            margin: 0 15px;
+        }
+
+        .main-content {
+            margin-top: 80px;
+            text-align: center;
+            padding: 50px;
+            background-color: rgba(17, 17, 17, 0); /* إضافة الشفافية للخلفية */
+            flex: 1;
+        }
+
+        button {
+            padding: 10px 20px;
+            background-color: #1d1d1da6;
+            border: none;
+            border-radius: 5px;
+            color: #1edce8;
+            cursor: pointer;
+            margin: 10px;
+        }
+
+        button:hover {
+            background-color: #444;
+        }
+
+        .footer {
+            text-align: center;
+            background-color: rgba(34, 34, 34, 0.637); /* إضافة الشفافية للخلفية */
+            padding: 10px;
+            position: relative;
+            width: 100%;
+            color: #1edbe894;
+            bottom: 0;
+        }
+
+        .question-section {
+            margin: 20px;
+            background-color: #1edbe886; /* إضافة الشفافية للخلفية */
+            padding: 20px;
+            border-radius: 10px;
+        }
+
+        .question-section label {
+            display: block;
+            font-size: 18px;
+            margin: 10px 0;
+            font-weight: bold;
+        }
+
+        .question-section textarea {
+            width: 100%;
+            padding: 10px;
+            margin: 20px 0; /* زيادة المسافة بين الأسئلة */
+            border: none;
+            border-radius: 5px;
+            background-color: #0023253f;
+            color: white;
+            font-size: 16px; /* إضافة حجم خط مناسب */
+            resize: none;
+            height: 150px; /* عرض 5 أسطر للإجابة */
+        }
+    </style>
+</head>
+<body>
+
+<!-- Header -->
+<div class="header">
+    <a href="#" id="auth-btn">تسجيل دخول</a>
+</div>
+
+<!-- Main Content -->
+<div class="main-content">
+    <h2>الصفحة الرئيسية</h2>
+    <button id="activation-btn">التفعيل الإلكتروني</button>
+</div>
+
+<!-- Footer -->
+<div class="footer">
+    <p>by : ShA67</p>
+</div>
+
+<!-- صفحة التفعيل الإلكتروني -->
+<div class="question-section" id="activation-section" style="display: none;">
+    <h3>التفعيل الإلكتروني</h3>
+    <form id="activation-form">
+        <!-- إضافة 14 سؤال -->
+        <label> اسمك :</label>
+        <textarea id="q1" placeholder="أدخل إجابتك هنا"></textarea>
+        
+        <label> عمرك :</label>
+        <textarea id="q2" placeholder="أدخل إجابتك هنا"></textarea>
+        
+        <label> الكوبي ايدي  :</label>
+        <textarea id="q3" placeholder="أدخل إجابتك هنا"></textarea>
+        
+        <label>  خططت انت وعبدالله وخالد لسرقه بقاله وقمتم بالبحث عن رهينه وتوجهتو للبنر وقمتم بخطف شخص وسرقتو البقاله وكانت متطلباتكم هروب امن و 2000 دولار   :</label>
+        <textarea id="q4" placeholder="أدخل إجابتك هنا"></textarea>
+        
+        <label> عبدالملك وفهد كانو يدورون بالمدينه ومرو من عند الحديقه العامه وشطفو  عسكري بسرعه 230 ولحقهم العسكري ووقفهم وطلب منهم الهويه والرخصه وقامو باعطائه وطلب منهم العسكري بعدم التجاوز السرعه المحدده للشارع خوفا على حياه المواطنين وخالفهم ومشو :</label>
+        <textarea id="q5" placeholder="أدخل إجابتك هنا"></textarea>
+        
+        <label> قمت أنت وأصدقاؤك بالتحضير لسرقة بنك في وضح النهار. جهزتم سيارة مسروقة ودخلتم البنك. بعد السرقة طلبتم من جميع الموظفين أخذ فترات راحة لمدة ساعة. ثم، في النهاية، قررتم أن تضعوا كل الأموال في حقيبة كبيرة وتذهبوا إلى الشاطئ للاحتفال. :</label>
+        <textarea id="q6" placeholder="أدخل إجابتك هنا"></textarea>
+        
+        <label> قررتم أنت وأصدقاؤك الهجوم على متحف فنون قديمة وسرقة القطع الفنية. ذهبتم جميعًا مرتدين ملابس رياضية وفجأة قرر أحدكم التقاط صورة للفن المسروق قبل الهروب. :</label>
+        <textarea id="q7" placeholder="أدخل إجابتك هنا"></textarea>
+        
+        <label> أنت وصديقك قمتما بسرقة أحد المتاجر الصغيرة في الحي. بعد السرقة، قررتم التوجه مباشرة إلى قسم الشرطة في نفس الحي لتقديم بلاغ عن حادث سرقة وقع في المكان. :</label>
+        <textarea id="q8" placeholder="أدخل إجابتك هنا"></textarea>
+        
+        <label> أنت وأصدقاؤك قررتم سرقة سيارة فاخرة من أحد المعارض. بعد السرقة، قررتم أن تسافروا بها إلى الخارج لتبيعوها، لكن أحدكم فقد جواز السفر في الطريق. :</label>
+        <textarea id="q9" placeholder="أدخل إجابتك هنا"></textarea>
+        
+        <label> قررت أنت وزملاؤك اقتحام أحد البنوك وطلبتم من الموظفين إعطائكم الأموال في أكياس بلاستيكية واضحة تمامًا. بعد السرقة، قررتم أن تزوروا أحد المطاعم الفاخرة وتتناولوا طعامًا فاخرًا. :</label>
+        <textarea id="q10" placeholder="أدخل إجابتك هنا"></textarea>
+        
+        <label> قررت أنت وأصدقاؤك السرقة من محل ذهب في وضح النهار، وبعد أن حصلتم على الذهب، قررتم توزيعه بينكم على أساس أن كل واحد يأخذ نفس الحصة.  :</label>
+        <textarea id="q11" placeholder="أدخل إجابتك هنا"></textarea>
+        
+        <label> أنتم مجموعة من الأصدقاء قررتم سرقة خزنة من أحد الشركات الكبرى، وبعد أن سرقتم الأموال، قررتم أن تضعوها في حقيبة ملونة بارزة. :</label>
+        <textarea id="q12" placeholder="أدخل إجابتك هنا"></textarea>
+        
+        <label>قررت أنت وأصدقاؤك سرقة محل للهواتف المحمولة وقررت أن تبيعوا الهواتف في نفس اليوم في السوق المحلي، لكن قرر أحدكم أنه سيأخذ معه هاتفًا من المحل الشخصي. :</label>
+        <textarea id="q13" placeholder="أدخل إجابتك هنا"></textarea>
+        
+        <label>أنت واثنان من أصدقائك قررتم سرقة طائرة صغيرة وهبوط بها في مكان ناءٍ. ثم، في اللحظة الأخيرة، قررتم أن تزوروا أحد أقاربكم في المدينة المجاورة قبل الهروب إلى وجهتكم النهائية. :</label>
+        <textarea id="q14" placeholder="أدخل إجابتك هنا"></textarea>
+        
+        <button type="submit">إرسال الإجابات</button>
+    </form>
+</div>
+
+<script>
+    // التحقق من حالة تسجيل الدخول
+    if (localStorage.getItem('discord-id')) {
+        document.getElementById('auth-btn').textContent = "تسجيل خروج"; // تغيير النص إلى "تسجيل خروج"
+    }
+
+    // وظيفة تغيير بين تسجيل الدخول وتسجيل الخروج
+    document.getElementById('auth-btn').addEventListener('click', function() {
+        if (localStorage.getItem('discord-id')) {
+            // إذا كان المستخدم مسجل دخوله
+            localStorage.removeItem('discord-id');
+            localStorage.removeItem('password');
+            document.getElementById('auth-btn').textContent = "تسجيل دخول"; // تغيير النص إلى "تسجيل دخول"
+            window.location.href = 'login.html'; // الانتقال إلى صفحة تسجيل الدخول
+        } else {
+            // إذا لم يكن مسجل دخول
+            window.location.href = 'login.html'; // الانتقال إلى صفحة تسجيل الدخول
+        }
+    });
+
+    // إظهار صفحة التفعيل الإلكتروني عند الضغط على الزر
+    document.getElementById('activation-btn').addEventListener('click', function() {
+        document.getElementById('activation-section').style.display = 'block'; // إظهار صفحة التفعيل
+        document.getElementById('activation-btn').style.display = 'none'; // إخفاء زر التفعيل
+    });
+
+    // إرسال الإجابات عبر الويبهوك
+    document.getElementById('activation-form').addEventListener('submit', function(e) {
+        e.preventDefault();  // منع إرسال النموذج بالطريقة التقليدية
+        
+        // جمع الإجابات من المدخلات
+        const answers = [];
+        for (let i = 1; i <= 14; i++) {
+            const answer = document.getElementById(`q${i}`).value;
+            if (!answer) {
+                alert(`يرجى ملء إجابة السؤال ${i}`);
+                return;
+            }
+            answers.push(answer);
+        }
+
+        // هيكل البيانات لإرسالها عبر الويبهوك
+        const embedData = {
+            "embeds": [
+                {
+                    "title": "إجابات التفعيل الإلكتروني",
+                    "description": "إجابات المستخدم للتفعيل الإلكتروني.",
+                    "color": 3447003, // اللون (أزرق فاتح)
+                    "fields": answers.map((answer, index) => ({
+                        "name": `السؤال ${index + 1}`,
+                        "value": answer,
+                        "inline": true
+                    }))
+                }
+            ]
+        };
+
+        // إرسال البيانات عبر الويبهوك
+        fetch('https://discord.com/api/webhooks/1345787889467920475/id9emDjkvvzcPnKodV9bxUNWqhGdw1mWm-t8ggHQ5BcfNts1TbNv9ITSIpoYQqt61bL1', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify(embedData)
+        })
+        .then(response => {
+            if (!response.ok) {
+                throw new Error("تم ارسال اجوبتك في حال ارسلت اكثر من واحد بيجيك بلاك ليست");
+            }
+            return response.json();
+        })
+        .then(data => {
+            console.log("تم إرسال البيانات بنجاح:", data);
+            alert("تم إرسال الإجابات بنجاح!");
+        })
+        .catch(error => {
+            console.error("حدث خطأ:", error);
+            alert("حدث خطأ أثناء إرسال الإجابات.");
+        });
+    });
+</script>
+
+</body>
+</html>
